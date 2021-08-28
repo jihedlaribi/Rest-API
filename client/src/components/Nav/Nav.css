@@ -1,0 +1,8 @@
+.nav {
+    background: linear-gradient(120deg, #2980b9, #ae97b8);
+    font-family: "Courier New", Courier, monospace;
+    height: 80px;
+    padding-top: 20px;
+    border-bottom: 1px solid black;
+    justify-content: center;
+}

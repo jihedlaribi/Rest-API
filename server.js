@@ -29,7 +29,7 @@ try {
     const users = await user.find()
     res.send(users)
 } catch (error) {
-    alert("get error")
+    res.send("get error")
 }
 })
 //Edit user by id
@@ -42,7 +42,7 @@ app.put("/users/update/:id", async (req, res) => {
       );
       res.send(editedUser);
     } catch (error) {
-      res.send("update user error (put)");
+      res.send("update user error");
     }
   });
   //Delete user by id
@@ -52,7 +52,7 @@ try {
     res.send("delete succesfuly")
     
 } catch (error) {
-    alert ("delete error")
+    res.send("delete error")
     
 }
 
