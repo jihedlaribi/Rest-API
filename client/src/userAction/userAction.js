@@ -37,15 +37,15 @@ export const getUser = () => async (dispatch) => {
     alert("get error");
   }
 };
-export const editUser = (id, fullName, phone, email) => async (dispatch) => {
+export const editUser =(id, fullName, email,phone) => async (dispatch) => {
   try {
-    const editedUser = { fullName, phone, email };
-    let res = await axios.put(`/users/put/${id}`, editedUser);
-    dispatch({
-      type: EDIT,
-      payload: res.data,
-    });
+      let editedUser= {fullName, email,phone}
+      let res = await axios.put(`/users/update/${id}`, editedUser)
+      dispatch({
+          type : EDIT ,
+          payload : res.data   
+      })
   } catch (error) {
-    alert("edit error");
+      alert('put error')
   }
-};
+}
