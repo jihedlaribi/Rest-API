@@ -40,7 +40,7 @@ export const getUser = () => async (dispatch) => {
 export const editUser = (id, fullName, phone, email) => async (dispatch) => {
   try {
     const editedUser = { fullName, phone, email };
-    let res = axios.put(`/users/put/${id}`, editedUser);
+    let res = await axios.put(`/users/put/${id}`, editedUser);
     dispatch({
       type: EDIT,
       payload: res.data,

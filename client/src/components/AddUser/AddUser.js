@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addUser, getUser } from "../../userAction/userAction";
+import "./AddUser.css"
 
 const AddUser = () => {
   const [fullName, setFullName] = useState("");
@@ -11,10 +12,11 @@ const AddUser = () => {
   const dispatch = useDispatch();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" className="add" onClick={handleShow}>
         Add
       </Button>
 
@@ -45,13 +47,13 @@ const AddUser = () => {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary"  type="submit" onClick={handleClose}>
             Close
           </Button>
           <Button
             variant="primary"
             onClick={() => {
-              dispatch(addUser(fullName, phone, email ));
+              dispatch(addUser(fullName,email, phone ));
               dispatch(getUser());
               handleClose();
             }}

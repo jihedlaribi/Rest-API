@@ -48,9 +48,10 @@ const EditUser = ({user}) => {
             Close
           </Button>
           <Button
+          type="submit"
             variant="primary"
             onClick={() => {
-              dispatch(editUser(user._id, fullName, phone, email ));
+              dispatch(editUser(user._id, fullName,email, phone ));
               dispatch(getUser());
               handleClose();
             }}
